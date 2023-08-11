@@ -8,29 +8,30 @@
         <?php endif; ?>
         <h1 id="main-title">Agenda da massa regueira </h1>
         <?php if(count($contacts) > 0): ?>
-            <table class="table" id="contacts-table">
-                <thead>
+            <table class="table table-striped table-dark">
+            <thead>
+                <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Telefone</th>
-                    <th scope="col"></th>
-                </thead>
-                <tbody>
-                    <?php foreach($contacts as $contact): ?>
-                        <tr>
-                            <td scope="row" class="col-id" ><?=$contact["id"] ?></td>
-                            <td scope="row" ><?=$contact["nameContact"] ?></td>
-                            <td scope="row" ><?=$contact["phoneContact"] ?></td>
-                            <td class="actions">
-                                <a href="<?=$BASE_URL?>show.php?id=<?=$contact["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
-                                <a href="<?=$BASE_URL?>edit.php?id=<?=$contact["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
-                                <form class="delete-form" action="<?=$BASE_URL?>config/process.php" method="POST">
-                                    <input type="hidden" name="type" value="delete">
-                                    <input type="hidden" name="id" value="<?=$contact["id"]?>">
+                    <th scope="col">Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($contacts as $contact) : ?>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><?= $contact["id"] ?></th>
+                                <td scope="row"><?= $contact["nameContact"] ?></td>
+                                <td scope="row"><?= $contact["phoneContact"] ?></td>
+                                <td class="actions">
+                                    <a href="<?= $BASE_URL ?>show.php?id=<?= $contact["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
+                                    <a href="<?= $BASE_URL ?>edit.php?id=<?= $contact["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
                                     <button type="submit" class="delete-btn"><i class="fas fa-times delete-icon"></i></button>
-                                    
-                                </form>
-                            </td>
+                        </td>
+                            </tr>
+                        </tbody>
+                <?php endforeach; ?>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
