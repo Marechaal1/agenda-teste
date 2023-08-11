@@ -1,10 +1,12 @@
 <?php
     //CONEXÃO COM O BANCO DE DADOS
-    $host = "containers-us-west-120.railway.app";
+    $host = "containers-us-west-60.railway.app";
     $dbname = "railway";
     $user = 'root';
-    $pass = 'phP46hrHmZyenfsP2TgH';
-    $dsn = "mysql://root:phP46hrHmZyenfsP2TgH@containers-us-west-120.railway.app:6272/railway";
+    $pass = 'gfWddImAoLV9MaOvMZRh';
+    $port = "6749";
+    
+    $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4";
 
     try{ 
 
