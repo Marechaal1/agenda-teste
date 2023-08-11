@@ -31,7 +31,7 @@ if(!empty($data)){
             $error = $e->getMessage();
             echo "ERROR : $error"; 
         }
-    }   //ATUALIAZANDO USUARIO : 
+    }   //ATUALIZANDO USUARIO : 
     if($data["type"] === "edit") {
         $name        = $data["name"];
         $phone       = $data["phone"];
@@ -59,8 +59,9 @@ if(!empty($data)){
             $error = $e->getMessage();
             echo "ERROR : $error";
     }
-    
+
     header("Location:" . $BASE_URL . "../index.php");
+}
 //SELEÇÃO DE DADOS 
 } else {
     $id;
@@ -90,5 +91,5 @@ if(!empty($data)){
     
     }
 }
-}
+
 $conn = null;
