@@ -40,8 +40,8 @@ if(!empty($data)){
         $id          = $data["id"];
 
         $query = ("UPDATE  contacts 
-                   SET  nameContact        = :nameContact
-                        phoneContact       = :phoneContact
+                   SET  nameContact        = :nameContact, 
+                        phoneContact       = :phoneContact,
                         observationContact = :observationContact 
                         WHERE id           = :id");
         
