@@ -59,29 +59,29 @@ if(!empty($data)){
             //ERRO NA CONEXÃO
             $error = $e->getMessage();
             echo "ERROR : $error";
+            }
     }
-}
 
-if($data["type"] === "delete"){
+    if($data["type"] === "delete"){
 
-    $id = $data["id"];
+        $id = $data["id"];
 
-    $query = "DELETE FROM contacts WHERE id = :id";
-    
-    $stmt = $conn->prepare($query);
+        $query = "DELETE FROM contacts WHERE id = :id";
+        
+        $stmt = $conn->prepare($query);
 
-    $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":id", $id);
 
-    try{ 
-        $stmt->execute();
-        $_SESSION["msg"] = "Deletado com sucesso !";
-    } catch(PDOException $e){
-        //ERRO NA CONEXÃO
-        $error = $e->getMessage();
-        echo "ERROR : $error";
-}
+        try{ 
+            $stmt->execute();
+            $_SESSION["msg"] = "Deletado com sucesso !";
+        } catch(PDOException $e){
+            //ERRO NA CONEXÃO
+            $error = $e->getMessage();
+            echo "ERROR : $error";
+        }
 
-}
+    }
     header("Location:" . $BASE_URL . "../index.php");
 
 //SELEÇÃO DE DADOS 
