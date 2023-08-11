@@ -62,3 +62,4 @@ if(!empty($data)){
     
     }
 }
+$conn = null;
