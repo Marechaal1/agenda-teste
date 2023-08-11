@@ -60,7 +60,6 @@ if(!empty($data)){
             echo "ERROR : $error";
     }
 }
-
     header("Location:" . $BASE_URL . "../index.php");
 
 //SELEÇÃO DE DADOS 
