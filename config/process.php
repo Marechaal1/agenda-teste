@@ -31,14 +31,15 @@ if(!empty($data)){
             $error = $e->getMessage();
             echo "ERROR : $error"; 
         }
-    }   //ATUALIZANDO USUARIO : 
+    }   
+    //ATUALIZANDO USUARIO : 
     if($data["type"] === "edit") {
         $name        = $data["name"];
         $phone       = $data["phone"];
         $observation = $data["description"];
         $id          = $data["id"];
 
-        $query("UPDATE  contacts 
+        $query = ("UPDATE  contacts 
                    SET  nameContact        = :nameContact
                         phoneContact       = :phoneContact
                         observationContact = :observationContact 
